@@ -28,7 +28,6 @@ function Start()
 		var xpos = child.position.x;
 		var ypos = child.position.y;
 
-		Debug.Log(xpos+" ; "+ypos);
 		for(var x = xpos-printRadius; x < xpos+printRadius; x++)
 		{
 			for(var y = ypos-printRadius; y < ypos+printRadius; y++)
@@ -40,7 +39,10 @@ function Start()
 					if(Vector2.Distance(new Vector2(x, y), new Vector2(xpos, ypos)) < printRadius)
 					{
 						var idx = yy*visibleMap.width+xx;
-						colors[idx] = Color.white;
+						if(child.CompareTag("sun"))
+							colors[idx] = new Color(1.0,1.0,0.0);
+						else
+							colors[idx] = Color.gray;
 					}
 				}
 			}
