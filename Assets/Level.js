@@ -4,15 +4,10 @@ public var planetCount : int;
 public var planets : Transform[];
 public var radius : int = 50;
 
-<<<<<<< HEAD
 public var sunCount : int;
 public var sun : Transform;
 
-
-function Start ()
-=======
 function Awake()
->>>>>>> 5881b7fdafc935cf41871b29cc598a54d39b2d78
 {
 	var positions = new Vector2[planetCount];
 	var offsets = new Vector2[planetCount];
