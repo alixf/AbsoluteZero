@@ -54,11 +54,11 @@ function talk()
 		{
 			Debug.Log(counter);
 			if(counter == 0)
-				setOpacity(0,0,0,1,0,0);
+				setOpacity(1,0,0,0,0,0);
 			if(counter == 1)
-				setOpacity(0,0,0,0,1,0);
+				setOpacity(0,0,0,1,0,0);
 			if(counter == 2)
-				setOpacity(0,0,0,0,0,1);
+				setOpacity(0,0,0,0,1,0);
 		}
 		yield WaitForSeconds(Random.Range(0.05,0.33));
 	}
