@@ -3,6 +3,7 @@
 import UnityEngine.UI;
 
 public var ship : Transform;
+public var capsuleManager : CapsuleManager;
 public var factor : float;
 private var shipLastPosition : Vector3;
 
@@ -19,12 +20,12 @@ function Update () {
 	var distance = Mathf.Sqrt(((xb-xa)*(xb-xa))+((yb-ya)*(yb-ya)));
 	GetComponent(Slider).value -= distance*factor;
 	shipLastPosition = ship.position;
-	ship.position.x += 0.01;
 	
 	if(Input.GetKeyDown('w')){
 		warmUp(0.5);
 	}
 	if(GetComponent(Slider).value == 0){
+		capsuleManager.removeOne();
 		Debug.Log("Frisson");
 		warmUp(1);
 	}

@@ -421,6 +421,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1 &663453408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 663453409}
+  - 114: {fileID: 663453410}
+  m_Layer: 0
+  m_Name: CapsuleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &663453409
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 663453408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -558.444702, y: -260.536835, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1140825488}
+  m_RootOrder: 1
+--- !u!114 &663453410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 663453408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b19db44aae973943b6fd2aef58de559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nbInit: 3
+  capsulePrefab: {fileID: 22400000, guid: 0f23066a2ee45064fa8ffec7bed31ac3, type: 2}
 --- !u!1 &666476928
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ship: {fileID: 1917843713}
+  capsuleManager: {fileID: 663453410}
   factor: .600000024
 --- !u!114 &1100959071
 MonoBehaviour:
@@ -748,6 +790,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1100959069}
+  - {fileID: 663453409}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
