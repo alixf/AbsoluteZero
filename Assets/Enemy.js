@@ -22,7 +22,6 @@ function Move()
 		{
 			var force = Random.insideUnitCircle;
 			force.Normalize();
-			Debug.Log(force);
 			rigidbody2D.AddForce(force * acceleration);
 			transform.eulerAngles.z = -90 + Mathf.Rad2Deg * Mathf.Atan2(force.y, force.x);
 			yield WaitForSeconds(Random.Range(minMoveDelay*3, maxMoveDelay*3));
@@ -33,4 +32,9 @@ function Move()
 			yield WaitForSeconds(Random.Range(minMoveDelay, maxMoveDelay));
 		}
 	}
+}
+
+function aggro(ship : Transform)
+{
+
 }
