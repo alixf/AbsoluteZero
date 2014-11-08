@@ -1,8 +1,12 @@
 ﻿#pragma strict
 public var elapsedTime:float;
+public var john:John;
+public var step:int;
+public var breach: GameObject;
 
 function Start () {
 	elapsedTime = 0;
+	step=0;
 }
 
 function Update () {
@@ -31,6 +35,22 @@ function Update () {
 	}
 	else if(elapsedTime > 8.72) {
 		GetComponent(Text).text = "I remember space sailors bragging about this phenomenon ...";
+	}
+	
+	if(elapsedTime > 36) {
+		breach.GetComponent(Image).color.a = 1;
+	}
+	manageTalking(elapsedTime);
+
+}
+
+function manageTalking(elapsedTime:float){
+
+	var change = [1.4,4.4,10,14,15,18,23,26.6,39,43.5,53,55.6,62.2,64.4,71.5,73,74,74.5];
+	
+	if (step !=change.Length && elapsedTime > change[step]) {
+		john.talking = !john.talking;
+		step++;
 	}
 
 }
