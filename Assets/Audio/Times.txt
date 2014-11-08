@@ -1,0 +1,22 @@
+Sleep : 
+	Début de boucle : 0:57:00
+	Fin de boucle : Fin de la musique
+
+Battle // GlitchedBattle :
+	Début de boucle : 0:36:00
+	Fin de boucle : Fin de la musique
+
+Exploration // GlitchedExploration : 
+	Début de boucle : 0:31:47
+	Fin de boucle : Fin de la musique
+
+GameOver :
+	Pas de boucle -> La musique a une fin
+
+Intro :
+	Pas de boucle -> La musique a une fin
+
+Theme :
+	Début de boucle : 1:27:27
+	Fin de boucle : Fin de la musique
+
