@@ -33,7 +33,22 @@ function Update () {
 }
 
 function warmUp(degrees:float) {
-	GetComponent(Slider).value += degrees;
+	var i:int;
+	
+	StartCoroutine(warm(degrees));
+	
+}
+
+function warm(degrees:float){
+	var clock = 0.0;
+	var init = GetComponent(Slider).value;
+	while(clock<0.5){
+		clock+=Time.deltaTime;
+		
+		GetComponent(Slider).value = init + clock*(2*degrees);
+		yield;
+	}
+	
 }
 
 
