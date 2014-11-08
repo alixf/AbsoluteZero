@@ -2,11 +2,12 @@
 import UnityEngine.UI;
 public var coldGauge : Transform;
 
-function Start () {
-
+function Start ()
+{
 }
 
-function Update () {
+function Update ()
+{
 	var value:float;
 	
 	value = coldGauge.GetComponent(Slider).value;

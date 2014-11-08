@@ -18,9 +18,9 @@ function Update()
 
 	if(Input.GetMouseButton(1)){
 		rigidbody2D.AddRelativeForce(acceleration * new Vector2(0,1));
-		particles.emissionRate = 50.0f;
+		particles.emissionRate = 50.0;
      }
 	else {
-		 particles.emissionRate = 0.0f;
+		 particles.emissionRate = 0.0;
 	}
 }
