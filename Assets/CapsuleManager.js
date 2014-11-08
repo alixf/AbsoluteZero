@@ -25,8 +25,7 @@ function Update () {
 		gameOver.localPosition.y = 150;
 		isGameOver = true;
 		shipNavigation.transform.GetComponent(SpriteRenderer).color = new Color(77,240,255,255);
-		shipNavigation.particles.emissionRate = 0.0f;
-		Debug.Log(shipNavigation.transform.GetComponent(SpriteRenderer).color);
+		shipNavigation.particles.emissionRate = 0.0;
 		shipNavigation.enabled = false;
 	
 	}
