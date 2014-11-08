@@ -26,7 +26,6 @@ function Update () {
 	}
 	if(GetComponent(Slider).value == 0){
 		capsuleManager.removeOne();
-		Debug.Log("Frisson");
 		warmUp(1);
 	}
 	

@@ -31,7 +31,6 @@ function Move()
 		}
 		else
 		{
-			Debug.Log("test");
 			if(Random.value > 0.5)
 			{
 				force = Random.insideUnitCircle;
@@ -40,7 +39,6 @@ function Move()
 			}
 			else
 			{
-				Debug.Log("shoot");
 				GetComponent(Weapon).shoot();
 			}
 
