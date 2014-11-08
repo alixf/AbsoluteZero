@@ -24,3 +24,8 @@ function Update()
 		 particles.emissionRate = 0.0;
 	}
 }
+
+function hit()
+{
+	
+}
