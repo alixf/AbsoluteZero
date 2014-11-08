@@ -4,11 +4,15 @@ public var planetCount : int;
 public var planets : Transform[];
 public var radius : int = 50;
 
+<<<<<<< HEAD
 public var sunCount : int;
 public var sun : Transform;
 
 
 function Start ()
+=======
+function Awake()
+>>>>>>> 5881b7fdafc935cf41871b29cc598a54d39b2d78
 {
 	var positions = new Vector2[planetCount];
 	var offsets = new Vector2[planetCount];
@@ -20,7 +24,6 @@ function Start ()
 	for(var i = 0; i < planetCount; ++i)
 	{
 		var angle = (i + Random.value) / planetCount * Mathf.PI*2;
-		Debug.Log((i + Random.value) / planetCount);
 		var distance = 0.33 * radius + 0.67 * radius * Random.value;
 		positions[i] = new Vector2(Mathf.Cos(angle) * distance, Mathf.Sin(angle) * distance);
 	}
@@ -57,7 +60,6 @@ function Start ()
 	{
 		positions[i] += offsets[i];
 		var id = Mathf.Floor(Random.Range(0,planets.length));
-		Debug.Log(id);
 		var newPlanet = Instantiate(planets[Mathf.Floor(Random.Range(0,planets.length))]);
 		newPlanet.parent = transform;
 		newPlanet.position = new Vector3(positions[i].x, positions[i].y, 0.0);
