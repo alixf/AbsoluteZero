@@ -12,6 +12,7 @@ public var voice2Left : AudioSource;
 public var voice1Left : AudioSource;
 public var voice0Left : AudioSource;
 public var subtitles : GameObject;
+public var toRemove : Transform;
 
 public var musicManager : MusicManager;
 
@@ -23,7 +24,7 @@ function Start () {
 	for(i=0;i<nbInit;++i){
 		var capsule = Instantiate(capsulePrefab);
 		capsule.parent = transform;
-		capsule.localPosition.x += 1000+i*15;
+		capsule.localPosition.x = i*15;
 		capsule.localPosition.y = 0;
 	}
 }
@@ -33,6 +34,7 @@ function Update () {
 		avatar.position = new Vector3(5000,5000,5000);
 		slider.position = new Vector3(5000,5000,5000);
 		minimap.position = new Vector3(5000,5000,5000);
+		toRemove.position = new Vector3(5000,5000,5000);
 		var gameOver = Instantiate(gameOverScreen);
 		gameOver.parent = transform.parent;
 		gameOver.localPosition.x = 0;

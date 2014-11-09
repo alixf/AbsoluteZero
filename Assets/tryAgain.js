@@ -8,6 +8,7 @@ function Update () {
 }
 
 function restart() {
+	Debug.Log("test");
 	Application.LoadLevel(Application.loadedLevel);
 }
 

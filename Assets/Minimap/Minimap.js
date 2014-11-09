@@ -95,6 +95,8 @@ function UpdateVisibleMap()
 		finalMap.SetPixels32(finalPixels);
 		finalMap.Apply();
 
+		Debug.Log("test");
+
 		yield WaitForSeconds(0.1);
 	}
 }

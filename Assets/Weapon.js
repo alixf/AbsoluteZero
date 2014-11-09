@@ -17,7 +17,7 @@ function Update ()
 	if(shootOnClick)
 	{
 		clock += Time.deltaTime;
-		if(Input.GetMouseButton(0) && clock >= reloadDuration)
+		if(Input.GetMouseButtonDown(0) && clock >= reloadDuration)
 		{
 			shoot();
 			clock = 0.0;

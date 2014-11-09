@@ -32,6 +32,5 @@ function Update()
 
 function hit()
 {
-	Debug.Log("DECU");
 	coldGauge.GetComponent(Slider).value -= ennemyFirePower;
 }
