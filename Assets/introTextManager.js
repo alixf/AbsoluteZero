@@ -3,6 +3,10 @@ public var elapsedTime:float;
 public var john:John;
 public var step:int;
 public var breach: GameObject;
+public var overlay : Image;
+public var music : AudioSource;
+public var duration = 0.5;
+public var clock = 0.0;
 
 function Start () {
 	elapsedTime = 0;
@@ -12,6 +16,18 @@ function Start () {
 function Update () {
 	elapsedTime += Time.deltaTime;
 	
+	if(clock <= duration)
+	{
+		clock += Time.deltaTime;
+		var factor = clock / duration;
+		overlay.color.a = 1-factor;
+		music.volume = factor;
+	}
+
+	if(elapsedTime > 75)
+	{
+		StartCoroutine("fadeout");
+	}
 	if(elapsedTime > 70.4) {
 		GetComponent(Text).text = "I 'm so cold .";
 	}
@@ -37,8 +53,8 @@ function Update () {
 		GetComponent(Text).text = "I remember space sailors bragging about this phenomenon ...";
 	}
 	
-	if(elapsedTime > 36) {
-		breach.GetComponent(Image).color.a = 1;
+	if(elapsedTime > 50) {
+		breach.GetComponent(SpriteRenderer).color.a = 1;
 	}
 	manageTalking(elapsedTime);
 
@@ -52,5 +68,22 @@ function manageTalking(elapsedTime:float){
 		john.talking = !john.talking;
 		step++;
 	}
+}
 
+function fadeout()
+{
+	overlay.enabled = true;
+	var duration = 0.5;
+	var clock = 0.0;
+
+	while(clock <= duration)
+	{
+		clock += Time.deltaTime;
+		var factor = clock / duration;
+		Debug.Log(factor);
+		overlay.color.a = factor;
+		music.volume = 1-factor;
+		yield;
+	}
+	Application.LoadLevel("level1");
 }
