@@ -6,6 +6,7 @@ public var reloadDuration : float;
 public var shootPoint : Transform;
 public var shootOnClick : boolean = false;
 public var bulletSpeed : float;
+public var musicManager : MusicManager;
 
 function Start ()
 {
@@ -32,4 +33,5 @@ function shoot()
 	bullet.rotation = transform.rotation;
 	bullet.rigidbody2D.AddRelativeForce(new Vector2(0.0, 1.0) * bulletSpeed);
 	bullet.GetComponent(Bullet).owner = transform;
+	musicManager.shoot();
 }

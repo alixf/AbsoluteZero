@@ -5,6 +5,8 @@ public var minMoveDelay = 0.5;
 public var maxMoveDelay = 1.5;
 public var acceleration = 50;
 public var health = 5;
+public var musicManager : MusicManager;
+
 
 function Start ()
 {
@@ -49,14 +51,24 @@ function Move()
 
 function aggro(ship : Transform)
 {
-	Camera.main.GetComponent(Follow).followType = FollowType.FollowBoth;
-	Camera.main.GetComponent(Follow).follow2 = transform;
-	target = ship;
+
+	if(target != ship){
+		Camera.main.GetComponent(Follow).followType = FollowType.FollowBoth;
+		Camera.main.GetComponent(Follow).follow2 = transform;
+		target = ship;
+		musicManager.toFight();
+		
+	}
 }
 
 function hit()
 {
 	health--;
-	if(health <= 0)
+	musicManager.ennemy();
+	if(health <= 0){
 		Destroy(gameObject);
+		musicManager.ennemyStop();
+		musicManager.toExplore();
+		
+	}
 }
