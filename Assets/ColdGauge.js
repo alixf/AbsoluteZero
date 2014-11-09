@@ -25,8 +25,11 @@ function Update () {
 		warmUp(0.5);
 	}
 	if(GetComponent(Slider).value == 0){
-		capsuleManager.removeOne();
-		warmUp(1);
+		var nbLeft = capsuleManager.removeOne();
+		if(nbLeft >= 0){
+			capsuleManager.removeActions(nbLeft);
+			warmUp(1);
+		}
 	}
 	
 }
