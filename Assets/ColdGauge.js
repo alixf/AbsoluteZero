@@ -6,6 +6,7 @@ public var ship : Transform;
 public var capsuleManager : CapsuleManager;
 public var factor : float;
 private var shipLastPosition : Vector3;
+public var musicManager : MusicManager;
 
 function Start () {
 	shipLastPosition = ship.position;
@@ -21,9 +22,6 @@ function Update () {
 	GetComponent(Slider).value -= distance*factor;
 	shipLastPosition = ship.position;
 	
-	if(Input.GetKeyDown('w')){
-		warmUp(0.5);
-	}
 	if(GetComponent(Slider).value == 0){
 		var nbLeft = capsuleManager.removeOne();
 		if(nbLeft >= 0){
@@ -31,6 +29,8 @@ function Update () {
 			warmUp(1);
 		}
 	}
+
+	adaptMusic(GetComponent(Slider).value);
 	
 }
 
@@ -51,6 +51,15 @@ function warm(degrees:float){
 		yield;
 	}
 	
+}
+
+
+function adaptMusic(heat:float){
+	var factor = heat*2.5 - 0.1*2.5;
+	factor = Mathf.Clamp(factor,0,1);
+
+
+	musicManager.changeVolume(factor);
 }
 
 

@@ -24,7 +24,7 @@ function Start () {
 	for(i=0;i<nbInit;++i){
 		var capsule = Instantiate(capsulePrefab);
 		capsule.parent = transform;
-		capsule.localPosition.x = i*15;
+		capsule.localPosition.x = i*30;
 		capsule.localPosition.y = 0;
 	}
 }

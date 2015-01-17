@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 
 public var target : Transform;
 public var minMoveDelay = 0.5;
@@ -66,6 +66,7 @@ function hit()
 	health--;
 	musicManager.ennemy();
 	if(health <= 0){
+		D
 		Destroy(gameObject);
 		musicManager.ennemyStop();
 		musicManager.toExplore();

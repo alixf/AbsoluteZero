@@ -23,7 +23,7 @@ function loadGame()
 {
 		Debug.Log("test");
 	StartCoroutine("fadeout");
-	out = "level1";
+	out = "level0";
 }
 
 function fadeout()

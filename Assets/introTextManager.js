@@ -7,6 +7,7 @@ public var overlay : Image;
 public var music : AudioSource;
 public var duration = 0.5;
 public var clock = 0.0;
+private var count = 0;
 
 function Start () {
 	elapsedTime = 0;
@@ -14,8 +15,12 @@ function Start () {
 }
 
 function Update () {
+	count++;
 	elapsedTime += Time.deltaTime;
 	
+	if(count == 2)
+		music.Play();
+
 	if(clock <= duration)
 	{
 		clock += Time.deltaTime;
@@ -85,5 +90,5 @@ function fadeout()
 		music.volume = 1-factor;
 		yield;
 	}
-	Application.LoadLevel("level1");
+	Application.LoadLevel(2);
 }
